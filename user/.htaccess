@@ -1,0 +1,19 @@
+#Alternate default index page
+DirectoryIndex login.php
+
+ErrorDocument 404 /login.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>

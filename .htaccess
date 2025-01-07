@@ -1,0 +1,16 @@
+RewriteEngine on
+RewriteCond ${LeechProtect:/home3/atmamaha/public_html:%{REMOTE_USER}:%{REMOTE_ADDR}:2:GW9BCnuvRKg5FeAhQHjCRQsyIchqtmhN} leech
+RewriteRule .* https://atmamaharashtra.com/404
+#Alternate default index page
+DirectoryIndex home.php
+ErrorDocument 404 /home.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
